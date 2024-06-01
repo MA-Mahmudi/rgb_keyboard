@@ -41,6 +41,7 @@ class keyboard;
 // usb ids
 const uint16_t keyboard_vid = 0x0c45;
 const uint16_t keyboard_vid2 = 0x320f;
+const uint16_t keyboard_vid3 = 0x258a;
 const std::vector<uint16_t> keyboard_pid = {
 	0x7903, // Ajazz AK33
 	0x5204, // Redragon K550 Yama
@@ -48,14 +49,22 @@ const std::vector<uint16_t> keyboard_pid = {
 	0x5004, // Redragon K556 Devarajas, K587 PRO Magic Wand, Mitra RGB
 	0x8520, // Warrior Kane TC235
 	0x652f,	// Glorious GMMK and Tecware Phantom#
-	0x672e  // Redragon K512
+	0x672e, // Redragon K512
+	0x0049, // Redragon K656-WB PRO, Redragon K530 PRO, Redragon K626P Ashe PRO
 };
 
 /// This map determines on which keyboards the Ajazz AK33 compatibility mode
 /// should be enabled by default
 const std::map<uint16_t, bool> use_control_transfer = {
-	{0x7903, true}, {0x5204, true}, {0x5104, true},
-	{0x5004, true}, {0x8520, true}, {0x652f, false}, {0x672e, true}};
+	{0x7903, true},
+	{0x5204, true},
+	{0x5104, true},
+	{0x5004, true},
+	{0x8520, true},
+	{0x652f, false},
+	{0x672e, true},
+	{0x0049, true}
+};
 
 /// \return the VID of the first detected supported keyboard or 0 if no keyboard
 /// was found

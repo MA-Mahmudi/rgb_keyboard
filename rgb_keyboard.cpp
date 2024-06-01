@@ -115,7 +115,6 @@ int main(int argc, char **argv) {
 		case 'h':
 			print_help();
 			return 0;
-			break;
 		case 'c':
 			flag_color = true;
 			string_color = optarg;
@@ -201,7 +200,6 @@ int main(int argc, char **argv) {
 			break;
 		case '?':
 			return 1;
-			break;
 		default:
 			break;
 		}
@@ -216,6 +214,10 @@ int main(int argc, char **argv) {
 	if (kbd.get_pid() == 0) {
 		kbd.set_vid(rgb_keyboard::keyboard_vid2);
 		kbd.set_pid(rgb_keyboard::detect_pid(rgb_keyboard::keyboard_vid2));
+	}
+	if (kbd.get_pid() == 0) {
+		kbd.set_vid(rgb_keyboard::keyboard_vid3);
+		kbd.set_pid(rgb_keyboard::detect_pid(rgb_keyboard::keyboard_vid3));
 	}
 	if (kbd.get_pid() == 0) {
 		std::cerr
