@@ -2,3 +2,4 @@ info/
 documentation/
 *.o
 rgb_keyboard
+.idea
